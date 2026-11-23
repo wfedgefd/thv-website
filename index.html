@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>THV Technologies | Web, Software & Digital Marketing in Kolkata</title>
+
+<meta name="description" content="THV Technologies builds websites, software and digital marketing that bring your business more customers.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--forest:#0d3b2e;
+--leaf:#1f8a5b;
+--lime:#b7e4c7;
+--mint:#e8f5ee;
+--paper:#fbfdfb;
+--ink:#14241d;
+--muted:#51655b;
+--line:#d5e5db;
+--head:"Bricolage Grotesque","Segoe UI",Arial,sans-serif;
+--body:"Public Sans","Segoe UI",Arial,sans-serif
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.65;font-size:17px}
+img,svg{max-width:100%}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--leaf);outline-offset:3px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--head);line-height:1.1;letter-spacing:-.02em}
+h2{font-size:clamp(1.9rem,4vw,2.8rem);max-width:20ch}
+.btn{display:inline-block;padding:13px 26px;border-radius:999px;font-weight:600;border:2px solid var(--leaf);background:var(--leaf);color:#fff;cursor:pointer;font:600 1rem var(--body);transition:background .2s}
+.btn:hover{background:var(--forest);border-color:var(--forest)}
+.btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
+.btn.ghost:hover{background:rgba(255,255,255,.12)}
+section{padding:92px 0}
+.lead{color:var(--muted);max-width:56ch;margin-top:16px}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(251,253,251,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font:800 1.45rem var(--head);color:var(--forest);display:flex;align-items:center;gap:9px}
+.logo i{display:grid;place-items:center;width:34px;height:34px;border-radius:9px;background:var(--forest);color:var(--lime);font-style:normal;font-size:.95rem}
+.logo span{font-weight:600;color:var(--leaf)}
+nav ul{list-style:none;display:flex;gap:6px;align-items:center}
+nav li{position:relative}
+nav a.top{display:block;padding:10px 14px;font-weight:500;border-radius:8px}
+nav a.top:hover{background:var(--mint)}
+.dd{position:absolute;top:100%;left:0;min-width:260px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px;display:none;box-shadow:0 14px 34px rgba(13,59,46,.14)}
+nav li:hover .dd,nav li:focus-within .dd{display:block}
+.dd a{display:block;padding:9px 12px;border-radius:8px;font-size:.95rem}
+.dd a:hover{background:var(--mint)}
+.menu-btn{display:none;background:none;border:0;font-size:1.7rem;color:var(--forest);cursor:pointer}
+
+/* hero */
+.hero{background:var(--forest);color:#fff;padding:96px 0 88px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(2.5rem,6vw,4.6rem);max-width:13ch}
+.hero p{color:#cfe6da;margin:22px 0 32px;max-width:48ch;font-size:1.1rem}
+.hero .acts{display:flex;gap:14px;flex-wrap:wrap}
+.panel{background:#10473a;border:1px solid #2a6a58;border-radius:20px;padding:28px}
+.panel small{color:#9fcdb9}
+.panel b{display:block;font:700 2.4rem var(--head);color:var(--lime)}
+.bars{display:flex;align-items:flex-end;gap:10px;height:140px;margin-top:20px}
+.bars span{flex:1;background:var(--leaf);border-radius:6px 6px 0 0;height:var(--h);transform-origin:bottom;animation:grow .9s ease-out both}
+.bars span:last-child{background:var(--lime)}
+@keyframes grow{from{transform:scaleY(.05)}}
+
+/* trust */
+.trust{padding:34px 0;border-bottom:1px solid var(--line);background:#fff}
+.trust .wrap{display:flex;flex-wrap:wrap;gap:14px 40px;justify-content:center;color:var(--muted);font-weight:600}
+
+/* grids */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px;margin-top:44px}
+.card{padding:28px;border:1px solid var(--line);border-radius:16px;background:#fff}
+.card h3{font-size:1.3rem;margin-bottom:10px}
+.card p{color:var(--muted);font-size:.98rem}
+#solutions{background:var(--mint)}
+#solutions .card{background:var(--paper)}
+.svc{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0;margin-top:44px;border-top:1px solid var(--line)}
+.svc div{padding:30px 28px 30px 0;border-bottom:1px solid var(--line)}
+.svc h3{font-size:1.25rem;margin-bottom:8px;color:var(--forest)}
+.svc p{color:var(--muted);font-size:.98rem}
+
+/* work */
+#work{background:var(--forest);color:#fff}
+#work .lead{color:#cfe6da}
+.case{padding:30px;border-radius:16px;background:#10473a;border:1px solid #2a6a58}
+.case em{font-style:normal;color:#9fcdb9;font-size:.9rem}
+.case h3{margin:6px 0 18px;font-size:1.3rem}
+.case b{font:700 2.1rem var(--head);color:var(--lime);display:block;line-height:1.1}
+.case span{color:#cfe6da;font-size:.92rem;display:block;margin-bottom:12px}
+.note{margin-top:26px;color:#9fcdb9;font-size:.9rem}
+
+/* testimonials */
+.quote{border-left:4px solid var(--leaf);padding:4px 0 4px 22px}
+.quote p{font-size:1.05rem;margin-bottom:14px}
+.quote strong{display:block}
+.quote span{color:var(--muted);font-size:.92rem}
+
+/* blog */
+#blog{background:var(--mint)}
+.post{border-radius:16px;overflow:hidden;background:#fff;border:1px solid var(--line)}
+.post .thumb{height:150px;background:linear-gradient(135deg,var(--leaf),var(--forest))}
+.post:nth-child(2) .thumb{background:linear-gradient(135deg,var(--forest),#3aa37a)}
+.post:nth-child(3) .thumb{background:linear-gradient(135deg,#52b788,var(--leaf))}
+.post div.t{padding:22px}
+.post h3{font-size:1.15rem;margin-bottom:8px}
+.post p{color:var(--muted);font-size:.95rem}
+.post a.more{display:inline-block;margin-top:12px;color:var(--leaf);font-weight:600}
+
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;margin-top:10px}
+.info p{margin:10px 0;color:var(--muted)}
+.info b{color:var(--ink);display:block}
+form{display:grid;gap:14px}
+label{font-weight:600;font-size:.95rem;display:grid;gap:6px}
+input,textarea{padding:13px 14px;border:1px solid #b9d1c3;border-radius:10px;font:inherit;background:#fff}
+textarea{min-height:130px;resize:vertical}
+#msg{color:var(--leaf);font-weight:600;min-height:1.4em}
+
+footer{background:var(--forest);color:#cfe6da;padding:56px 0 28px}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px}
+footer .logo{color:#fff}
+footer h4{color:#fff;margin-bottom:12px;font-family:var(--head)}
+footer li{list-style:none;margin:7px 0;font-size:.95rem}
+footer a:hover{color:#fff;text-decoration:underline}
+.copy{border-top:1px solid #2a6a58;margin-top:36px;padding-top:20px;font-size:.88rem}
+
+@media(max-width:900px){
+.hero .wrap,.contact,.fgrid{grid-template-columns:1fr}
+.menu-btn{display:block}
+nav{display:none;position:absolute;top:68px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);padding:12px 24px 20px}
+nav.open{display:block}
+nav ul{flex-direction:column;align-items:stretch}
+.dd{position:static;display:block;box-shadow:none;border:0;padding:0 0 0 14px;min-width:0}
+section{padding:68px 0}
+}
+@media(prefers-reduced-motion:reduce){.bars span{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+<div class="wrap bar">
+  <a href="#top" class="logo" aria-label="THV Technologies home"><i>TH</i>THV <span>Technologies</span></a>
+  <button class="menu-btn" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+  <nav aria-label="Main">
+    <ul>
+      <li><a class="top" href="#solutions">Solutions</a>
+        <div class="dd"><a href="#solutions">Lead Generation</a><a href="#solutions">Measurement &amp; Reporting</a><a href="#solutions">Customer Experience</a><a href="#solutions">AI Automation</a></div></li>
+      <li><a class="top" href="#services">Services</a>
+        <div class="dd"><a href="#services">Website Development</a><a href="#services">Software Development</a><a href="#services">SEO</a><a href="#services">Paid Advertising</a></div></li>
+      <li><a class="top" href="#work">Our Work</a></li>
+      <li><a class="top" href="#blog">Blog</a></li>
+      <li><a class="btn" href="#contact" style="padding:10px 22px">Get in touch</a></li>
+    </ul>
+  </nav>
+</div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Technology that grows your business</h1>
+      <p>THV Technologies builds fast websites, custom software and digital marketing for businesses in Delhi and beyond, so more of the right customers find you and contact you.</p>
+      <div class="acts"><a class="btn" href="#contact">Get a free consultation</a><a class="btn ghost" href="#services">See our services</a></div>
+    </div>
+    <div class="panel" aria-hidden="true">
+      <small>Sample client results, last 12 months</small>
+      <b>+64% enquiries</b>
+      <div class="bars"><span style="--h:28%"></span><span style="--h:40%;animation-delay:.1s"></span><span style="--h:52%;animation-delay:.2s"></span><span style="--h:66%;animation-delay:.3s"></span><span style="--h:82%;animation-delay:.4s"></span><span style="--h:100%;animation-delay:.5s"></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="trust"><div class="wrap"><span>Google Analytics</span><span>WordPress</span><span>Shopify</span><span>HubSpot</span><span>Microsoft Azure</span><span>Meta Ads</span></div></div>
+
+<section id="solutions">
+  <div class="wrap">
+    <h2>Solutions for every stage of growth</h2>
+    <p class="lead">From the first visit to the final sale, we set up the pieces that bring in customers and keep them.</p>
+    <div class="grid">
+      <div class="card"><h3>Lead Generation</h3><p>Targeted campaigns and landing pages that turn interest into enquiries your team can follow up.</p></div>
+      <div class="card"><h3>Measurement &amp; Reporting</h3><p>Clear dashboards that show what is working, what it costs and what it earns.</p></div>
+      <div class="card"><h3>Customer Experience</h3><p>Simple, fast websites and forms that make it easy for people to buy or get in touch.</p></div>
+      <div class="card"><h3>AI Automation</h3><p>Automate replies, reports and repeat tasks so your team spends time on real work.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <h2>What we build and run for you</h2>
+    <div class="svc">
+      <div><h3>Website Development</h3><p>Business websites and online stores that load fast, work on phones and are easy for you to update.</p></div>
+      <div><h3>Software Development</h3><p>Custom web apps, portals and tools built around how your business actually works.</p></div>
+      <div><h3>SEO</h3><p>Get found on Google when customers search for what you sell, in Delhi and nationwide.</p></div>
+      <div><h3>Paid Advertising</h3><p>Google and social media ads with clear budgets and monthly results you can read.</p></div>
+      <div><h3>Data &amp; Insights</h3><p>Analytics setup and tracking so every rupee of marketing can be measured.</p></div>
+      <div><h3>Hosting &amp; Maintenance</h3><p>Secure hosting, backups and updates, so your site stays online and safe.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <h2>Work that shows results</h2>
+    <p class="lead">A few sample projects. Replace these with your real case studies as you complete them.</p>
+    <div class="grid">
+      <div class="case"><em>Website Development, Retail</em><h3>New website for a local retailer</h3><b>+49%</b><span>new business enquiries</span><b>+14%</b><span>engagement rate</span></div>
+      <div class="case"><em>SEO, Technology</em><h3>Organic growth for a software company</h3><b>+21%</b><span>organic traffic</span><b>+61%</b><span>search-driven leads</span></div>
+      <div class="case"><em>Paid Advertising, Services</em><h3>Google Ads for a service provider</h3><b>+108%</b><span>ad conversions</span><b>+38%</b><span>more transactions</span></div>
+    </div>
+    <p class="note">These numbers are placeholders for layout only. Do not publish them as real results.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>What clients say</h2>
+    <div class="grid">
+      <div class="quote"><p>They explained everything in plain language and delivered our website on time. We now get enquiries every week.</p><strong>Client Name</strong><span>Director, Company Name</span></div>
+      <div class="quote"><p>Responsive team and honest advice. Our monthly reports finally make sense.</p><strong>Client Name</strong><span>Marketing Head, Company Name</span></div>
+      <div class="quote"><p>THV set up our software and trained our staff. Support has been quick whenever we needed it.</p><strong>Client Name</strong><span>Owner, Company Name</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="blog">
+  <div class="wrap">
+    <h2>Insights from our team</h2>
+    <div class="grid">
+      <article class="post"><div class="thumb"></div><div class="t"><h3>How much does a business website cost in India?</h3><p>A simple breakdown of design, hosting and upkeep costs.</p><a class="more" href="#blog">Read more</a></div></article>
+      <article class="post"><div class="thumb"></div><div class="t"><h3>5 SEO basics every small business should do</h3><p>Easy steps to start showing up on Google.</p><a class="more" href="#blog">Read more</a></div></article>
+      <article class="post"><div class="thumb"></div><div class="t"><h3>Where AI can save your team time</h3><p>Practical ways to automate everyday tasks.</p><a class="more" href="#blog">Read more</a></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2>Tell us about your project</h2>
+    <p class="lead">Send a message and we will reply as soon as we can.</p>
+    <div class="contact" style="margin-top:40px">
+      <div class="info">
+        <p><b>Phone</b><a href="tel:+917217821213">+91-7217821213</a></p>
+        <p><b>Email</b><a href="mailto:Admin@thvtechnologies.com">Admin@thvtechnologies.com</a></p>
+        <p><b>Address</b>Delhi, Delhi - 110097</p>
+      </div>
+      <form id="cf">
+        <label>Your name<input name="name" required autocomplete="name"></label>
+        <label>Contact Number<input type="Contact Number" name="Contact Number" required autocomplete="Contact Number"></label>
+        <label>Email<input type="email" name="email" required autocomplete="email"></label>
+        <label>How can we help?<textarea name="message" required></textarea></label>
+        <button class="btn" type="submit">Send message</button>
+        <div id="msg" role="status"></div>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+<div class="wrap">
+  <div class="fgrid">
+    <div><a href="#top" class="logo"><i>TH</i>THV <span style="color:var(--lime)">Technologies</span></a><p style="margin-top:14px;max-width:32ch">Websites, software and digital marketing for growing businesses.</p></div>
+    <div><h4>Company</h4><ul><li><a href="#work">Our Work</a></li><li><a href="#blog">Blog</a></li><li><a href="#contact">Contact</a></li></ul></div>
+    <div><h4>Services</h4><ul><li><a href="#services">Websites</a></li><li><a href="#services">Software</a></li><li><a href="#services">SEO</a></li></ul></div>
+    <div><h4>Contact</h4><ul><li>917217821213</li><li>Admin@thvrechnologiescom</li><li>Delhi, Delhi - 110030</li></ul></div>
+  </div>
+  <p class="copy">&copy; 2026 THV Technologies. All rights reserved.</p>
+</div>
+</footer>
+
+<script>
+var btn=document.querySelector('.menu-btn'),nav=document.querySelector('nav');
+btn.addEventListener('click',function(){var o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o)});
+nav.addEventListener('click',function(e){if(e.target.tagName==='A')nav.classList.remove('open')});
+document.getElementById('cf').addEventListener('submit',function(e){
+  e.preventDefault();
+  var f=e.target,s=encodeURIComponent('Website enquiry from '+f.name.value),
+  b=encodeURIComponent('Name: '+f.name.value+'\nEmail: '+f.email.value+'\n\n'+f.message.value);
+  document.getElementById('msg').textContent='Opening your email app to send the message...';
+  window.location.href='mailto:ttt@gmail.com?subject='+s+'&body='+b;
+});
+</script>
+</body>
+</html>
